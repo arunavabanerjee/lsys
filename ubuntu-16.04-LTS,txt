@@ -1,0 +1,65 @@
+//--- apt ---
+apt - command-line interface 
+apt provides a high-level commandline interface for the package management system. 
+It is intended as an end user interface and enables some options better suited for interactive usage 
+by default compared to more specialized APT tools like apt-get(8) and apt-cache(8).
+apt list --lists all packages
+apt list | grep installed -- listed installed packages
+
+
+//--- dpkg ---
+dpkg -- dpkg - package manager for Debian
+Type dpkg --help for help about installing and deinstalling packages [*];
+Use 'apt' or 'aptitude' for user-friendly package management;
+Type dpkg -Dhelp for a list of dpkg debug flag values;
+Type dpkg --force-help for a list of forcing options;
+Type dpkg-deb --help for help about manipulating *.deb files;
+
+
+
+
+//--- apt-get ---
+apt-get - apt 1.2.29 (amd64)
+Usage: apt-get [options] command
+       apt-get [options] install|remove pkg1 [pkg2 ...]
+       apt-get [options] source pkg1 [pkg2 ...]
+apt-get is a command line interface for retrieval of packages and information about them from authenticated sources and
+for installation, upgrade and removal of packages together with their dependencies.
+Most used commands:
+  update - Retrieve new lists of packages
+  upgrade - Perform an upgrade
+  install - Install new packages (pkg is libc6 not libc6.deb)
+  remove - Remove packages
+  purge - Remove packages and config files
+  autoremove - Remove automatically all unused packages
+  dist-upgrade - Distribution upgrade, see apt-get(8)
+  dselect-upgrade - Follow dselect selections
+  build-dep - Configure build-dependencies for source packages
+  clean - Erase downloaded archive files
+  autoclean - Erase old downloaded archive files
+  check - Verify that there are no broken dependencies
+  source - Download source archives
+  download - Download the binary package into the current directory
+  changelog - Download and display the changelog for the given package
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

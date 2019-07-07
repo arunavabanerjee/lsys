@@ -1,0 +1,47 @@
+
+Creating an instance, launching and connect to it
+--------------------------------------------------
+1. Create an instance AMI (Amazon Macine Image)
+2. Create and launch the instance. 
+3. By default the "security group" of the instance is "security group by launch wizard". 
+4. Get the key-value pair and download the pem file. 
+5. Change permission on the pem file to 400 
+6. Connect to the instance using the ssh tool: 
+    ssh -i ./pmfile/amazoninst-ami.pem ec2-user@ec2-3-87-71-215.compute-1.amazonaws.com 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

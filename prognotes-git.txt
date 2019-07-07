@@ -1,0 +1,87 @@
+//-----------------------------------------------------------
+// documentation
+// https://progit2.s3.amazonaws.com/en/2016-03-22-f3531/progit-en.1084.pdf
+//-----------------------------------------------------------
+
+//setup
+sudo yum install git-all 
+sudo apt-get install git-all
+
+//packages required for git
+$ sudo yum install curl-devel expat-devel gettext-devel \  
+   openssl-devel perl-devel zlib-devel
+$ sudo apt-get install libcurl4-gnutls-dev libexpat1-dev gettext \  
+    libz-dev libssl-dev
+$ tar -zxf git-2.0.0.tar.gz
+$ cd git-2.0.0
+$ make configure
+$ ./configure --prefix=/usr$ make all doc info
+$ sudo make install install-doc install-html install-info    
+$ git clone git://git.kernel.org/pub/scm/git/git.git    
+    
+//Git comes with a tool called "git config" that lets you get and set configuration variables 
+//that control all aspects of how Git looks and operates.
+1./etc/gitconfig  file:  Contains  values  for  every  user  on  the  system  and all  their  repositories.  
+   If  you  pass  the  option  --system  to  git config,  it reads and writes from this file specifically.
+2.~/.gitconfig  or  ~/.config/git/config  file:  Specific  to  your  user.You can make Git read and write to 
+   this file specifically by passing the --global option
+3.config file in the Git directory (that is, .git/config) of whatever repository you’re currently using: 
+   Specific to that single repository.
+Each  level  overrides  values  in  the  previous  level,  so  values  in  .git/config trump those in /etc/gitconfig.   
+
+//set username 
+$ git config --global user.name "John Doe"
+$ git config --global user.email johndoe@example.com
+//setup git for folder
+$ git config user.name "arunavabanerjee"
+$ git config user.email "mrarunbanerjee09@gmail.com" 
+
+//check config 
+$ git config --list
+
+$ git init
+$ git clone https://github.com/libgit2/libgit2
+$ git status 
+
+//add new files.
+$ cd libgit2  ||  $ mv ../newfolder .  
+$ git add .
+$ git status 
+  <shows all files added >
+
+// seeing changes
+$ git diff 
+$ git diff --staged 
+
+// branching
+$ git branch gateways - creates a branch called gateways
+$ git branch  -- lists all the branches at local system 
+$ git checkout gateways -- switch to the branch 
+$ git checkout -b gateways -- create branch and switch
+
+$ git commit -a -m "Test Commit"
+$ git push --set-upstream origin newbranch
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

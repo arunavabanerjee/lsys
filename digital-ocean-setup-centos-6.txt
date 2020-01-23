@@ -1,1 +1,23 @@
+=============
+Digital Ocean Setup
+=============
+Setup Droplet 
+ a. Control Panel > Droplets > Create New
+ b. Select a plan (CentOs 7 preferred)
+ c. Select a project as default - (Team) 
+     - such that all droplets are displayed.
+ d. Create the droplet. 
+ e. Get the IP and DNS for pointing domain to the droplet. 
+ f. Get the email with the root credentials.
+ 
+Setup Server with Apache and PHP
+a. Login to the droplet using the root credentials above. 
+b. SSH will be logging into using default port 22
+c. Install httpd server. 
+   ( $ yum update httpd 
+     $ yum install httpd )
+d. Apache will be in installed and server will listen to the default port 80.
+e.  
 
+
+ 

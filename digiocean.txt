@@ -1,3 +1,11 @@
+php
+-------
+php -m >> gives a list of modules loaded
+php -i >> gives details of the modules 
+php --ini >> shows config files
+apachectl -V >> shows the configurations which have been used
+
+
 Upgrade PHP to 7.1
 --------------------
 Centos7

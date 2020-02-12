@@ -16,6 +16,13 @@ yum-config-manager --enable remi-php71
 yum update -y
 ------------
 php -v
+------------
+//disable previous php
+yum-config-manager --disable remi-php56
+yum-config-manager --disable remi-php70
+yum-config-manager --disable remi-php71
+yum-config-manager --disable remi-php72
+
 
 
 

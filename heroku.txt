@@ -261,6 +261,30 @@ web: vendor/bin/heroku-php-apache2 web/
 This declares a single process type, web, and the command needed to run it. The name web: is important here. It declares that this process type will be attached to the HTTP routing stack of Heroku, and receive web traffic when deployed.
 Procfiles can contain additional process types. For example, you might declare one for a background worker process that processes items off of a queue.
 =============================================
+Right now, your app is running on a single web dyno. Think of a dyno as a lightweight container that runs the command specified in the Procfile.
+You can check how many dynos are running using the ps command:
+cn22@cnadmin:~/softwr/heroku/apps/php-getting-started$ bash ~/softwr/heroku/bin/heroku ps 
+Free dyno hours quota remaining this month: 550h 0m (100%)
+Free dyno usage for this app: 0h 0m (0%)
+For more information on dyno sleeping and how to upgrade, see:
+https://devcenter.heroku.com/articles/dyno-sleeping
+
+=== web (Free): vendor/bin/heroku-php-apache2 web/ (1)
+web.1: up 2020/02/26 12:38:56 +0530 (~ 11m ago)
+
+cn22@cnadmin:~/softwr/heroku/apps/php-getting-started$ 
+-------------------
+By default, your app is deployed on a free dyno. Free dynos will sleep after a half hour of inactivity (if they don’t receive any traffic). This causes a delay of a few seconds for the first request upon waking. Subsequent requests will perform normally. Free dynos also consume from a monthly, account-level quota of free dyno hours - as long as the quota is not exhausted, all free apps can continue to run.
+
+To avoid dyno sleeping, you can upgrade to a hobby or professional dyno type as described in the Dyno Types article. For example, if you migrate your app to a professional dyno, you can easily scale it by running a command telling Heroku to execute a specific number of dynos, each running your web process type.
+
+Scaling an application on Heroku is equivalent to changing the number of dynos that are running. Scale the number of web dynos to zero.
+
+cn22@cnadmin:~/softwr/heroku/apps/php-getting-started$ bash ~/softwr/heroku/bin/heroku ps:scale web=1
+Scaling dynos... done, now running web at 1:Free
+Setting web=0, will stop the app from executing. 
+=====================================================
+
 
 
 

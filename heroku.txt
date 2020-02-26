@@ -252,6 +252,16 @@ cn22@cnadmin:~/softwr/heroku/apps/php-getting-started$ bash ~/softwr/heroku/bin/
 2020-02-26T07:12:34.374058+00:00 app[web.1]: [2020-02-26 07:12:34] app.ERROR: Symfony\Component\HttpKernel\Exception\NotFoundHttpException: No route found for "GET /favicon.ico" (from "https://stark-badlands-91540.herokuapp.com/") (uncaught exception) at /app/vendor/symfony/http-kernel/EventListener/RouterListener.php line 125 {"exception":"[object] (Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException(code: 0): No route found for \"GET /favicon.ico\" (from \"https://stark-badlands-91540.herokuapp.com/\") at /app/vendor/symfony/http-kernel/EventListener/RouterListener.php:125, Symfony\\Component\\Routing\\Exception\\ResourceNotFoundException(code: 0): No routes found for \"/favicon.ico\". at /app/vendor/symfony/routing/Matcher/UrlMatcher.php:98)"} []
 2020-02-26T07:12:34.375754+00:00 app[web.1]: [2020-02-26 07:12:34] app.DEBUG: < 404 [] []
 2020-02-26T07:12:34.376852+00:00 app[web.1]: 10.35.248.8 - - [26/Feb/2020:07:12:34 +0000] "GET /favicon.ico HTTP/1.1" 404 9750 "https://stark-badlands-91540.herokuapp.com/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.75 Safari/537.36
+---- Ctrl+C to stop the logs 
+=============================================
+Define a Procfile
+Use a Procfile, a text file in the root directory of your application, to explicitly declare what command should be executed to start your app.
+The Procfile in the example app you deployed looks like this:
+web: vendor/bin/heroku-php-apache2 web/
+This declares a single process type, web, and the command needed to run it. The name web: is important here. It declares that this process type will be attached to the HTTP routing stack of Heroku, and receive web traffic when deployed.
+Procfiles can contain additional process types. For example, you might declare one for a background worker process that processes items off of a queue.
+=============================================
+
 
 
 

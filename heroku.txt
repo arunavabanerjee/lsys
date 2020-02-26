@@ -56,4 +56,12 @@ COMMANDS
   update          update the Heroku CLI
   webhooks        list webhooks on an app
   =============================================
+  
+cn22@cnadmin:~/softwr/heroku$ bash ./bin/heroku login -i
+heroku: Enter your login credentials
+Email: arunava.banerjee@capitalnumbers.com
+Password: ***************
+Logged in as arunava.banerjee@capitalnumbers.com
+cn22@cnadmin:~/softwr/heroku$ 
+===============================================
 

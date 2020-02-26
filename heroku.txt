@@ -144,8 +144,9 @@ Creating app... done, ⬢ stark-badlands-91540
 https://stark-badlands-91540.herokuapp.com/ | https://git.heroku.com/stark-badlands-91540.git
 cn22@cnadmin:~/softwr/heroku/apps/php-getting-started$ 
 ==========================================================
-When you create an app, a git remote (called heroku) is also created and associated with your local git repository.
-Heroku generates a random name (in this case sharp-rain-871) for your app, or you can pass a parameter to specify your own app name.
+When you create an app, a git remote (called heroku) is also created and associated with your local git 
+repository. Heroku generates a random name (in this case sharp-rain-871) for your app, or you can pass a 
+parameter to specify your own app name.
 
 
 

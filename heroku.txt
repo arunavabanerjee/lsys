@@ -147,6 +147,115 @@ cn22@cnadmin:~/softwr/heroku/apps/php-getting-started$
 When you create an app, a git remote (called heroku) is also created and associated with your local git 
 repository. Heroku generates a random name (in this case sharp-rain-871) for your app, or you can pass a 
 parameter to specify your own app name.
+==========================================================
+git config -l -list all options 
+cn22@cnadmin:~/softwr/heroku/apps/php-getting-started$ git config --list
+core.repositoryformatversion=0
+core.filemode=true
+core.bare=false
+core.logallrefupdates=true
+remote.origin.url=https://github.com/heroku/php-getting-started.git
+remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+branch.master.remote=origin
+branch.master.merge=refs/heads/master
+remote.heroku.url=https://git.heroku.com/stark-badlands-91540.git
+remote.heroku.fetch=+refs/heads/*:refs/remotes/heroku/*
+--------------------------------------------------------------------
+Posting to remote heroku:
+cn22@cnadmin:~/softwr/heroku/apps/php-getting-started$ git push heroku master
+Counting objects: 178, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (95/95), done.
+Writing objects: 100% (178/178), 48.02 KiB | 0 bytes/s, done.
+Total 178 (delta 69), reused 178 (delta 69)
+remote: Compressing source files... done.
+remote: Building source:
+remote: 
+remote: -----> PHP app detected
+remote: -----> Bootstrapping...
+remote: -----> Installing platform packages...
+remote:        NOTICE: No runtime required in composer.json; requirements
+remote:        from dependencies in composer.lock will be used for selection
+remote:        - php (7.4.2)
+remote:        - apache (2.4.41)
+remote:        - nginx (1.16.1)
+remote: -----> Installing dependencies...
+remote:        Composer version 1.9.3 2020-02-04 12:58:49
+remote:        Loading composer repositories with package information
+remote:        Installing dependencies from lock file
+remote:        Package operations: 12 installs, 0 updates, 0 removals
+remote:          - Installing psr/log (1.0.2): Downloading (100%)
+remote:          - Installing monolog/monolog (1.22.1): Downloading (100%)
+remote:          - Installing symfony/routing (v3.2.7): Downloading (100%)
+remote:          - Installing symfony/polyfill-mbstring (v1.3.0): Downloading (100%)
+remote:          - Installing symfony/http-foundation (v3.2.7): Downloading (100%)
+remote:          - Installing symfony/event-dispatcher (v3.2.7): Downloading (100%)
+remote:          - Installing symfony/debug (v3.2.7): Downloading (100%)
+remote:          - Installing symfony/http-kernel (v3.2.7): Downloading (100%)
+remote:          - Installing pimple/pimple (v3.0.2): Downloading (100%)
+remote:          - Installing silex/silex (v2.0.4): Downloading (100%)
+remote:          - Installing twig/twig (v2.3.0): Downloading (100%)
+remote:          - Installing symfony/twig-bridge (v3.2.7): Downloading (100%)
+remote:        Generating optimized autoload files
+remote: -----> Preparing runtime environment...
+remote: -----> Checking for additional extensions to install...
+remote: -----> Discovering process types
+remote:        Procfile declares types -> web
+remote: 
+remote: -----> Compressing...
+remote:        Done: 15.4M
+remote: -----> Launching...
+remote:        Released v3
+remote:        https://stark-badlands-91540.herokuapp.com/ deployed to Heroku
+remote: 
+remote: Verifying deploy... done.
+To https://git.heroku.com/stark-badlands-91540.git
+ * [new branch]      master -> master
+---------------------------------------------------------
+The application is now deployed. Ensure that at least one instance of the app is running:
+cn22@cnadmin:~/softwr/heroku/apps/php-getting-started$ bash ~/softwr/heroku/bin/heroku ps:scale web=1
+Scaling dynos... done, now running web at 1:Free
+cn22@cnadmin:~/softwr/heroku/apps/php-getting-started$ 
+===============================================================================
+Logs generated:
+cn22@cnadmin:~/softwr/heroku/apps/php-getting-started$ bash ~/softwr/heroku/bin/heroku logs --tail
+2020-02-26T06:41:14.234287+00:00 app[api]: Initial release by user arunava.banerjee@capitalnumbers.com
+2020-02-26T06:41:14.391998+00:00 app[api]: Enable Logplex by user arunava.banerjee@capitalnumbers.com
+2020-02-26T06:41:14.234287+00:00 app[api]: Release v1 created by user arunava.banerjee@capitalnumbers.com
+2020-02-26T06:41:14.391998+00:00 app[api]: Release v2 created by user arunava.banerjee@capitalnumbers.com
+2020-02-26T06:41:55.149795+00:00 heroku[router]: at=info code=H81 desc="Blank app" method=GET path="/" host=stark-badlands-91540.herokuapp.com request_id=bb10de80-851d-433b-9c01-950964cbae71 fwd="111.93.173.178" dyno= connect= service= status=502 bytes= protocol=https
+2020-02-26T06:41:55.553005+00:00 heroku[router]: at=info code=H81 desc="Blank app" method=GET path="/favicon.ico" host=stark-badlands-91540.herokuapp.com request_id=67ebe8f2-55d7-42a5-990f-cd77703e4336 fwd="111.93.173.178" dyno= connect= service= status=502 bytes= protocol=https
+2020-02-26T07:08:40.000000+00:00 app[api]: Build started by user arunava.banerjee@capitalnumbers.com
+2020-02-26T07:08:51.111947+00:00 app[api]: Deploy 4f2369ca by user arunava.banerjee@capitalnumbers.com
+2020-02-26T07:08:51.111947+00:00 app[api]: Release v3 created by user arunava.banerjee@capitalnumbers.com
+2020-02-26T07:08:51.130202+00:00 app[api]: Scaled to web@1:Free by user arunava.banerjee@capitalnumbers.com
+2020-02-26T07:08:51.000000+00:00 app[api]: Build succeeded
+2020-02-26T07:08:53.258539+00:00 heroku[web.1]: Starting process with command `vendor/bin/heroku-php-apache2 web/`
+2020-02-26T07:08:56.178734+00:00 app[web.1]: DOCUMENT_ROOT changed to 'web/'
+2020-02-26T07:08:56.249547+00:00 app[web.1]: Detected 536870912 Bytes of RAM
+2020-02-26T07:08:56.276568+00:00 app[web.1]: PHP memory_limit is 128M Bytes
+2020-02-26T07:08:56.283860+00:00 app[web.1]: Starting php-fpm with 4 workers...
+2020-02-26T07:08:56.368455+00:00 app[web.1]: Starting httpd...
+2020-02-26T07:08:56.639552+00:00 heroku[web.1]: State changed from starting to up
+2020-02-26T07:12:33.180265+00:00 heroku[router]: at=info method=GET path="/" host=stark-badlands-91540.herokuapp.com request_id=1feca9f9-a843-4373-8c88-d31ceeabec03 fwd="111.93.173.178" dyno=web.1 connect=2ms service=90ms status=200 bytes=6999 protocol=https
+2020-02-26T07:12:33.133934+00:00 app[web.1]: [2020-02-26 07:12:33] app.INFO: Matched route "{route}". {"route":"GET_","route_parameters":{"_controller":"[object] (Closure: {})","_route":"GET_"},"request_uri":"http://stark-badlands-91540.herokuapp.com/","method":"GET"} []
+2020-02-26T07:12:33.134010+00:00 app[web.1]: [2020-02-26 07:12:33] app.DEBUG: > GET / [] []
+2020-02-26T07:12:33.134184+00:00 app[web.1]: [2020-02-26 07:12:33] app.DEBUG: logging output. [] []
+2020-02-26T07:12:33.167471+00:00 app[web.1]: [26-Feb-2020 07:12:33 UTC] PHP Deprecated:  Unparenthesized `a ? b : c ? d : e` is deprecated. Use either `(a ? b : c) ? d : e` or `a ? b : (c ? d : e)` in /app/vendor/twig/twig/lib/Twig/Node.php on line 42
+2020-02-26T07:12:33.179485+00:00 app[web.1]: [2020-02-26 07:12:33] app.DEBUG: < 200 [] []
+2020-02-26T07:12:33.180059+00:00 app[web.1]: 10.41.220.10 - - [26/Feb/2020:07:12:33 +0000] "GET / HTTP/1.1" 200 6793 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.75 Safari/537.36
+2020-02-26T07:12:33.574190+00:00 heroku[router]: at=info method=GET path="/stylesheets/main.css" host=stark-badlands-91540.herokuapp.com request_id=93b5aedb-e68c-4585-b51c-85a65d563b7b fwd="111.93.173.178" dyno=web.1 connect=2ms service=10ms status=200 bytes=836 protocol=https
+2020-02-26T07:12:33.568195+00:00 app[web.1]: 10.41.220.10 - - [26/Feb/2020:07:12:33 +0000] "GET /stylesheets/main.css HTTP/1.1" 200 605 "https://stark-badlands-91540.herokuapp.com/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.75 Safari/537.36
+2020-02-26T07:12:33.573559+00:00 app[web.1]: 10.35.248.8 - - [26/Feb/2020:07:12:33 +0000] "GET /images/lang-logo.png HTTP/1.1" 200 1066 "https://stark-badlands-91540.herokuapp.com/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.75 Safari/537.36
+2020-02-26T07:12:33.572825+00:00 heroku[router]: at=info method=GET path="/images/lang-logo.png" host=stark-badlands-91540.herokuapp.com request_id=16f53efb-dc9b-4a9b-9900-cdf841519e52 fwd="111.93.173.178" dyno=web.1 connect=1ms service=2ms status=200 bytes=1299 protocol=https
+2020-02-26T07:12:34.377011+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=stark-badlands-91540.herokuapp.com request_id=7e0acb2c-9cd6-4b99-9e64-7b35bf8616ba fwd="111.93.173.178" dyno=web.1 connect=1ms service=11ms status=404 bytes=9970 protocol=https
+2020-02-26T07:12:34.374058+00:00 app[web.1]: [2020-02-26 07:12:34] app.ERROR: Symfony\Component\HttpKernel\Exception\NotFoundHttpException: No route found for "GET /favicon.ico" (from "https://stark-badlands-91540.herokuapp.com/") (uncaught exception) at /app/vendor/symfony/http-kernel/EventListener/RouterListener.php line 125 {"exception":"[object] (Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException(code: 0): No route found for \"GET /favicon.ico\" (from \"https://stark-badlands-91540.herokuapp.com/\") at /app/vendor/symfony/http-kernel/EventListener/RouterListener.php:125, Symfony\\Component\\Routing\\Exception\\ResourceNotFoundException(code: 0): No routes found for \"/favicon.ico\". at /app/vendor/symfony/routing/Matcher/UrlMatcher.php:98)"} []
+2020-02-26T07:12:34.375754+00:00 app[web.1]: [2020-02-26 07:12:34] app.DEBUG: < 404 [] []
+2020-02-26T07:12:34.376852+00:00 app[web.1]: 10.35.248.8 - - [26/Feb/2020:07:12:34 +0000] "GET /favicon.ico HTTP/1.1" 404 9750 "https://stark-badlands-91540.herokuapp.com/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.75 Safari/537.36
+
+
+
+
 
 
 

@@ -56,7 +56,7 @@ COMMANDS
   update          update the Heroku CLI
   webhooks        list webhooks on an app
   =============================================
-  
+  Login to heroku :
 cn22@cnadmin:~/softwr/heroku$ bash ./bin/heroku login -i
 heroku: Enter your login credentials
 Email: arunava.banerjee@capitalnumbers.com
@@ -64,4 +64,15 @@ Password: ***************
 Logged in as arunava.banerjee@capitalnumbers.com
 cn22@cnadmin:~/softwr/heroku$ 
 ===============================================
+Prepare the app: clone the app: 
+cn22@cnadmin:~/softwr/heroku/apps$ git clone https://github.com/heroku/php-getting-started.git
+Cloning into 'php-getting-started'...
+remote: Enumerating objects: 189, done.
+remote: Total 189 (delta 0), reused 0 (delta 0), pack-reused 189
+Receiving objects: 100% (189/189), 49.78 KiB | 0 bytes/s, done.
+Resolving deltas: 100% (77/77), done.
+Checking connectivity... done.
+cn22@cnadmin:~/softwr/heroku/apps$ 
+================================================
+
 

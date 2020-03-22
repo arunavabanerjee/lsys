@@ -1,0 +1,33 @@
+//-------------
+// AWS Lambda. 
+// https://docs.aws.amazon.com/lambda/latest/dg/with-s3-example.html
+// https://docs.aws.amazon.com/lambda/latest/dg/getting-started.html
+//-------------
+To get started with AWS Lambda, use the Lambda console to create a function. 
+In a few minutes, you can create a function, invoke it, and view logs, metrics, and trace data. 
+
+You can author functions in the Lambda console — or with an IDE toolkit, command line tools, or SDKs. 
+The Lambda console provides a code editor for noncompiled languages that lets you modify and test code quickly. 
+The AWS CLI gives you direct access to the Lambda API for advanced configuration and automation use cases. 
+
+In this Getting Started exercise you create a Lambda function using the AWS Lambda console. 
+Next, you manually invoke the Lambda function using sample event data. 
+AWS Lambda executes the Lambda function and returns results. 
+You then verify execution results, including the logs that your Lambda function created and various 
+CloudWatch metrics. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

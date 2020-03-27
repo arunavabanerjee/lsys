@@ -82,7 +82,7 @@ b. Common UseCases > Lambda
 c. Permission to be set: AWSLambdaExecute 
 d. Tag Value : role_created_by: root_user. 
 e. Review > AddName > lambda_to_s3_role. 
----
+-------------- AWSLambdaExecute policy json
 Current Policy - AWS Managed Policy - AWSLambdaExecute. 
 policy contains: 
 {

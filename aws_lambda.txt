@@ -76,6 +76,7 @@ f.Files uploaded in folder as provided in the S3 object "new_s3_images/".
 =============================================================================
 
 A. Create a IAM Role for AWS Lambda. 
+-------------------------------------
 a. IAM Console > Roles > CreateRole
 b. Common UseCases > Lambda 
 c. Permission to be set: AWSLambdaExecute 
@@ -105,7 +106,11 @@ policy contains:
     ]
 }
 --------------
-B. Create a Function in Lambda using the role mentioned above. 
+B. Create a bucket in S3. 
+a. Name the bucket as "mycustombucket". 
+b. Bucket Settings by default - "Block All Public Access". 
+---------------
+C. Create a Function in Lambda using the role mentioned above. 
 
 
 

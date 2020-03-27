@@ -73,6 +73,42 @@ d.Setup function.
 e.Add Trigger to function (S3)
 f.Files uploaded in folder as provided in the S3 object "new_s3_images/".
 
+=============================================================================
+
+A. Create a IAM Role for AWS Lambda. 
+a. IAM Console > Roles > CreateRole
+b. Common UseCases > Lambda 
+c. Permission to be set: AWSLambdaExecute 
+d. Tag Value : role_created_by: root_user. 
+e. Review > AddName > lambda_to_s3_role. 
+---
+Current Policy - AWS Managed Policy - AWSLambdaExecute. 
+policy contains: 
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "logs:*"
+            ],
+            "Resource": "arn:aws:logs:*:*:*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetObject",
+                "s3:PutObject"
+            ],
+            "Resource": "arn:aws:s3:::*"
+        }
+    ]
+}
+--------------
+B. Create a Function in Lambda using the role mentioned above. 
+
+
+
 
 
 

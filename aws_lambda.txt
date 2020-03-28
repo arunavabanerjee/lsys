@@ -114,8 +114,8 @@ B. Create a bucket in S3.
 a. Name the bucket as "mycustombucket". 
 b. Bucket Settings by default - "Block All Public Access". 
 c. Create 2 folders, source and resized. 
-   Source will contain the source object image or video. 
-   Resize will contain the resized object image or video. 
+   "source" will contain the source object image or video. 
+   "resize" will contain the resized object image or video. 
 --------------
 
 ---------------------------------------------------------------

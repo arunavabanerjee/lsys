@@ -1,0 +1,46 @@
+
+//sources list in apt stored in 
+sudo cp /etc/apt/sources.list /etc/apt/sources.list.backup
+
+// Additional software repositories such as Universe and Multiverse can be enabled by uncommenting 
+// the corresponding apt lines (i.e. delete the '#' at the beginning of the line). 
+// For Universe, uncomment those lines: 
+deb http://us.archive.ubuntu.com/ubuntu/ saucy universe
+deb-src http://us.archive.ubuntu.com/ubuntu/ saucy universe
+deb http://us.archive.ubuntu.com/ubuntu/ saucy-updates universe
+deb-src http://us.archive.ubuntu.com/ubuntu/ saucy-updates universe
+
+There are four similar lines for 'multiverse'.
+
+OR you may use the add-apt-repository command. If your release is 'saucy': 
+sudo add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ saucy universe multiverse"
+sudo add-apt-repository "deb http://us.archive.ubuntu.com/ubuntu/ saucy-updates universe multiverse"
+
+-------------
+
+sudo apt-get purge ffmpeg -- removes along with configuration 
+
+sudo add-apt-repository ppa:jonathonf/ffmpeg-4
+sudo apt update
+sudo apt install ffmpeg
+ffmpeg -version
+
+sudo apt install ppa-purge && sudo ppa-purge ppa:jonathonf/ffmpeg-4
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

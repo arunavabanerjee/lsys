@@ -25,6 +25,19 @@ sudo apt update
 sudo apt install ffmpeg
 ffmpeg -version
 
+ffmpeg -version:            show version
+ffmpeg -formats:            show available formats
+ffmpeg -codecs:             show available codecs
+ffmpeg -decoders:           show available decoders
+ffmpeg -encoders:           show available encoders
+ffmpeg -bsfs:               show available bit stream filters
+ffmpeg -protocols:          show available protocols
+ffmpeg -filters:            show available filters
+ffmpeg -pix_fmts:           show available pixel formats
+ffmpeg -layouts:            show standard channel layouts
+ffmpeg -sample_fmts:        show available audio sample formats
+
+
 sudo apt install ppa-purge && sudo ppa-purge ppa:jonathonf/ffmpeg-4
 
 

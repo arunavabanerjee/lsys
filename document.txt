@@ -40,6 +40,24 @@ sudo a2dismod php7.0 && sudo a2enmod php5.6 && sudo service apache2 restart
 # For php-cli in the command line
 sudo ln -sfn /usr/bin/php5.6 /etc/alternatives/php
 
+=========================================================
+
+<?php
+
+$start = microtime(TRUE);
+
+/* Start of the code to profile */
+for ($a = 0; $a < 10000000; $a++)
+{
+	$b = $a*$a;
+}
+/* End of the code to profile */
+
+$end = microtime(TRUE);
+echo "The code took " . ($end - $start) . " seconds to complete.";
+
+?>
+
 
 
 

@@ -1,3 +1,14 @@
+//-----------------------
+//upgrading fedora 22 
+//--------
+a. update fedora release - sudo dnf 
+
+
+
+
+
+
+
 //-------------------------
 //--- using composer 
 //-------------------------

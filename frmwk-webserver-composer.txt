@@ -1,7 +1,17 @@
 //-----------------------
 //upgrading fedora 22 
-//--------
-a. update fedora release - sudo dnf 
+//------------------------
+a. update fedora release - sudo dnf upgrade --refresh 
+b. install plugin to perform sys upgrade - sudo dnf install dnf-plugin-system-upgrade 
+c. download the new release - sudo dnf system-upgrade download --refresh --releasever=23 
+------ shows the libraries that are incompatible with the new release. 
+d. remove those libraries - sudo dnf remove google-chrome. 
+e. redo the download command in (c), that will list all the libraries to be loaded. 
+f. download the new version, on completion reboot. 
+g. sudo dnf system-upgrade reboot. 
+-----
+
+
 
 
 
